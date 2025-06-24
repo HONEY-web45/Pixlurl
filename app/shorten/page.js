@@ -35,6 +35,8 @@ const generate=async() => {
     else{
       alert(b.message)}
       setgen(`${process.env.NEXT_PUBLIC_LINK}/${shorturl}`)
+      console.log(gen);
+      
       if (url.startsWith("https://")) {
         
         setgene(`${url}`)

@@ -1,5 +1,6 @@
-import { redirect } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import clientPromise from "@/lib/mongodb"
+
 export default async function page({params}){
 const short=(await params).shorturl
 
@@ -19,14 +20,14 @@ if ( doc.url.startsWith("https://")) {
     redirect(`https://${doc.url}`)
 }
     }
-    else(
-        redirect(process.env.NEXT_PUBLIC_LINK)
-    )
+    else{
+    notFound()
+    }
+}
    
 
 
 
-}
 
 
 
