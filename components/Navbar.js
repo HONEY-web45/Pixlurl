@@ -14,7 +14,7 @@ const Navbar = () => {
     </Link> 
     <div className='flex items-center flex-col sm:flex-row'>
 
-    <ul className='list-none flex gap-3 sm:gap-6  p-3 font-bold pl-4 sm:pl-8 items-center'>
+    <ul className='list-none flex gap-3 sm:gap-6  p-3 font-semibold pl-4 sm:pl-8 items-center'>
 
 <Link href="/"><li>Home</li></Link>
 <Link href="/about"><li>About</li></Link>

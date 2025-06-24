@@ -18,6 +18,9 @@ const generate=async() => {
   else if (shorturl.length<1) {
     throw new Error(alert("Shorturl is empty"),"Shorturl is empty")
   }
+  else if (shorturl.length>9) {
+    throw new Error(alert("Shorturl should be less than of 9 characters"),"Shorturl should be less than of 9 characters")
+  }
   
     
     else{
@@ -59,7 +62,8 @@ useEffect(() => {
 })
 
   return (
-    <div className='bg-purple-200 border-purple-300 border in rounded-xl max-w-lg mx-5 sm:mx-auto my-10 p-7 flex flex-col gap-4  '>
+    <div className='min-h-screen bg-purple-100  py-10'>
+    <div className='bg-purple-200 border-purple-300 border in rounded-xl max-w-lg mx-5 sm:mx-auto  p-7 flex flex-col gap-4  '>
       <h2 className='font-bold text-xl text-center'>Generate your short URLs</h2>
       <div className='flex flex-col gap-2'>
         <input type="text" className='p-3 rounded-lg' onChange={(e)=>{seturl(e.target.value)}} value={url} placeholder='Enter your URL' />
@@ -71,13 +75,14 @@ useEffect(() => {
       </div>
       {gen &&  <div >
        <div className='font-bold text-lg'>Your Link</div>
-        <div className='flex pt-3 col sm:flex-row items-center justify-evenly gap-4 sm:gap-2 pr-2'> 
-       <Link href={gene} target="_blank" rel="noopener noreferrer" className='text-lg break-words width w-64'><code>{gen}</code></Link>
+        <div className='flex pt-3  flex-col items-center justify-center gap-4 sm:gap-2 px-2'> 
+
+       <Link href={gene} target="_blank" rel="noopener noreferrer" className='text-lg break-words  w-11/12 border-[3px] text-center  border-black bg-blue-400 px-3 py-2 font-bold text-white rounded-xl'><code>{gen}</code></Link>
          
          <button className='bg-red-500 w-fit self-center px-2  pt-1 pb-2 text-lg text-white rounded-xl text-center' onClick={()=>copy()}>copy</button>
          </div>
          </div>} 
-    
+    </div>
     </div>
   )
 }
